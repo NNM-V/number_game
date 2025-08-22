@@ -3,21 +3,20 @@
 using namespace std;
 using RPS = Rock_Paper_Scissors;
 
-map<int, string> RPS::get_hand_map() const{
-    if(selected_lang == 1){
-        return {{1, "rock"}, {2, "scissors"}, {3, "paper"}};
-    }else if(selected_lang == 2){
-        return {{1, "ぐー"}, {2, "ちょき"}, {3, "ぱー"}};
-    }
-    return{};
-}
-
 void RPS::play_RPS(){
     if(selected_lang == 1){
         cout<<"Let's play rock paper scissors!"<<endl;
-    }else if(selected_lang == 1){
+    }else if(selected_lang == 2){
         cout<<"じゃんけんをしましょう!"<<endl;
     }
+    
+    int player_hand = get_PlayerHand();
+    int pc_hand = get_RandomHand();
+    set_Hand(player_hand,pc_hand);
+    set_Result(player_hand,pc_hand);
+}
+
+int RPS::get_PlayerHand(){
     //input hand 
     while(true){
         if(selected_lang == 1){
@@ -28,49 +27,47 @@ void RPS::play_RPS(){
         
         getline(cin,input);
         if(input.empty()){
-            if(selected_lang == 1){
-                cout<<dict.get_value(EMPTY_INPUT,selected_lang)<<endl;
-            }else if(selected_lang == 2){
-                cout<<dict.get_value(EMPTY_INPUT,selected_lang)<<endl;
-            }
+            cout<<dict.get_value(EMPTY_INPUT,selected_lang)<<endl;
         }else if(input != "1" && input != "2" && input != "3"){
-            if(selected_lang == 1){
-                cout<<dict.get_value(INVALID_INPUT,selected_lang)<<endl;
-            }else if(selected_lang == 2){
-                cout<<dict.get_value(INVALID_INPUT,selected_lang)<<endl;
-            }
+           cout<<dict.get_value(INVALID_INPUT,selected_lang)<<endl;
         }else{
-            break;
+            //convert user input string into a number
+            return stoi(input);
         }
     }
-
-    //convert user input string into a number
-    int num = stoi(input);
-    //allocate number to a string 
-    auto player_hand = get_hand_map();
-    //find number that matches user input
-    auto itr_player = player_hand.find(num);
-    player_choice = itr_player->first;
- 
-    //allocate number pc picked to a string
-    auto pc_hand = get_hand_map();
-    //find number that matches pc's hand
-    int rand_hand = get_RandomHand();
-    auto itr_pc = pc_hand.find(rand_hand);
-    pc_choice = itr_pc->first;
-
-    if(selected_lang == 1){
-        cout<<"Your hand:"<<itr_player->second<<"\n"<<"computer's hand:"<<itr_pc->second<<endl;
-    }else if(selected_lang == 2){
-        cout<<"あなたの手:"<<itr_player->second<<"\n"<<"コンピューターの手:"<<itr_pc->second<<endl;
-    }
-    set_Result(player_choice,pc_choice);
 }
 
 int RPS::get_RandomHand(){
     //pick random number for cp's hand
     uniform_int_distribution<> dis(1, 3);
     return dis(engine);
+}
+
+map<int, string> RPS::get_hand_map() const{
+    if(selected_lang == 1){
+        return {{1, "rock"}, {2, "scissors"}, {3, "paper"}};
+    }else if(selected_lang == 2){
+        return {{1, "ぐー"}, {2, "ちょき"}, {3, "ぱー"}};
+    }
+    return{};
+}
+
+void RPS::set_Hand(const int player_hand, const int pc_hand){
+    //allocate number to a string 
+    auto player_map = get_hand_map();
+    //find number that matches the user input
+    auto itr_player = player_map.find(player_hand);
+
+    //allocate number pc picked to a string
+    auto pc_map = get_hand_map();
+    //find number that matches the pc hand
+    auto itr_pc = pc_map.find(pc_hand);
+
+    if(selected_lang == 1){
+        cout<<"Your hand:"<<itr_player->second<<"\n"<<"computer's hand:"<<itr_pc->second<<endl;
+    }else if(selected_lang == 2){
+        cout<<"あなたの手:"<<itr_player->second<<"\n"<<"コンピューターの手:"<<itr_pc->second<<endl;
+    }
 }
 
 void RPS::set_Result(const int player_choice, const int cp_choice){

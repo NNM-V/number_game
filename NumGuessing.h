@@ -25,6 +25,7 @@ class NumGuessing{
 
         void play_NG();
         int get_RandomNum();
+        int get_RandomHand();
 };
 
 #endif //_NUM_GUESSING

@@ -26,7 +26,9 @@ class Rock_Paper_Scissors{
 
         std::map<int, std::string> get_hand_map() const;
         void play_RPS(); 
+        int get_PlayerHand();
         int get_RandomHand();
+        void set_Hand(const int player_choice, const int cp_choice);
         void set_Result(const int player_choice, const int cp_choice);
 };
 
