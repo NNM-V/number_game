@@ -4,7 +4,8 @@ using namespace std;
 
 void NumGuessing::play_NG(){
     int rand_num = get_RandomNum();
-    cout<<rand_num<<endl;
+    //cout<<rand_num<<endl;
+    
     if(selected_lang == 1){
         cout<<"Let's play Number guessing game!"<<endl;
     }else if(selected_lang == 2){
