@@ -1,8 +1,6 @@
 #ifndef _NUM_GUESSING_H
 #define _NUM_GUESSING_H
 
-#define _ROCK_PAPER_SCISSORS_H
-
 #include <iostream>
 #include <random>
 #include "Dictionary.h"

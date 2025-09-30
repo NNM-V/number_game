@@ -2,6 +2,7 @@
 #include "Dictionary.h"
 #include "RockPaperScissors.h"
 #include "NumGuessing.h"
+#include "ContinueMenu.h"
 
 using namespace std;
 using RPS = Rock_Paper_Scissors;

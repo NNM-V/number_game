@@ -1,19 +1,35 @@
 #include "RockPaperScissors.h"
+#include "ContinueMenu.h"
 
 using namespace std;
 using RPS = Rock_Paper_Scissors;
 
 void RPS::play_RPS(){
-    if(selected_lang == 1){
-        cout<<"Let's play rock paper scissors!"<<endl;
-    }else if(selected_lang == 2){
-        cout<<"じゃんけんをしましょう!"<<endl;
-    }
     
-    int player_hand = get_PlayerHand();
-    int pc_hand = get_RandomHand();
-    set_Hand(player_hand,pc_hand);
-    set_Result(player_hand,pc_hand);
+    while(true){
+        if(selected_lang == 1){
+            cout<<"Let's play rock paper scissors!"<<endl;
+        }else if(selected_lang == 2){
+            cout<<"じゃんけんをしましょう!"<<endl;
+        }
+        
+        //get user input
+        int player_hand = get_PlayerHand();
+        //get random number from pc
+        int pc_hand = get_RandomHand();
+        //output player and pc hand
+        set_Hand(player_hand,pc_hand);
+        //output result
+        set_Result(player_hand,pc_hand);
+
+        Continue_Menu c(selected_lang);
+        char cont = c.cont();
+
+        //break if user input is 'n' 
+        if(cont == 'n'){
+            break;
+        }
+    }
 }
 
 int RPS::get_PlayerHand(){
