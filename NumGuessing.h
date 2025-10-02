@@ -21,7 +21,7 @@ class NumGuessing{
         }
         ~NumGuessing(){}
 
-        void play_NG();
+        char play_NG();
         int get_RandomNum();
 };
 

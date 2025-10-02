@@ -7,6 +7,7 @@
 enum MESSAGE_KEY{
     EMPTY_INPUT,
     INVALID_INPUT,
+    REPLAY
 };
 
 enum LANGUAGE{

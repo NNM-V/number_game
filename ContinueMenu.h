@@ -8,6 +8,7 @@
 class Continue_Menu{
     int lang;
     LANGUAGE selected_lang;
+    
     public:
     Continue_Menu(int lang):lang(lang){
             selected_lang = (LANGUAGE)lang;

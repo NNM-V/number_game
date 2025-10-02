@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "C/C++: g++ build and debug game",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "build game"
+        }
+    ],
+    "version": "2.0.0"
+}

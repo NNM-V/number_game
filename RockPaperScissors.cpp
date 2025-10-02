@@ -4,8 +4,7 @@
 using namespace std;
 using RPS = Rock_Paper_Scissors;
 
-void RPS::play_RPS(){
-    
+char RPS::play_RPS(){
     while(true){
         if(selected_lang == 1){
             cout<<"Let's play rock paper scissors!"<<endl;
@@ -24,11 +23,9 @@ void RPS::play_RPS(){
 
         Continue_Menu c(selected_lang);
         char cont = c.cont();
-
-        //break if user input is 'n' 
-        if(cont == 'n'){
-            break;
-        }
+        if(cont == 'm' || cont == 'n'){
+            return cont;
+        } 
     }
 }
 

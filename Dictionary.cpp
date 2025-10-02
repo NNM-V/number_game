@@ -32,4 +32,6 @@ DICTIONARY dict =
     {JAPANESE,"空の入力です"}}},
     {INVALID_INPUT,{{ENGLISH,"Unvalid input"},
     {JAPANESE,"無効な入力です"}}},
+    {REPLAY,{{ENGLISH,"Do you want to play again?('y'=yes/'n'=no/'m'=menu):"},
+    {JAPANESE,"もう一度遊ぶ？('y'=yes/'n'=no/'m'=menu):"}}},
 };

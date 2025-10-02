@@ -3,12 +3,13 @@
 
 using namespace std;
 
-void NumGuessing::play_NG(){
+char NumGuessing::play_NG(){
     //continue while user input is "y"
-    char cont='y';
+    char cont;
 
     while(true){
         int rand_num = get_RandomNum();
+        //test output
         cout<<rand_num<<endl;
         
         if(selected_lang == 1){
@@ -69,11 +70,9 @@ void NumGuessing::play_NG(){
 
         Continue_Menu c(selected_lang);
         char cont = c.cont();
-        
-        //break if user input is 'n' 
-        if(cont == 'n'){
-            break;
-        }
+        if(cont == 'm' || cont == 'n'){
+            return cont;
+        } 
     }
 }
 
