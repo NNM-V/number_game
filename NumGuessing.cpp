@@ -16,7 +16,6 @@ string NumGuessing::play_NG(){
         get_UserGuess(rand_num);
 
         cout<<dict.get_value(REPLAY,selected_lang)<<endl;
-
         Utility utility;
         string tmp = utility.check_Vaild_String({"y","n","m"});
         if(tmp == "m" || tmp == "n"){
@@ -34,7 +33,7 @@ void NumGuessing::get_UserGuess(const int& rand_num){
     //input hand 
     while(true){
         if(selected_lang == 1){
-            cout<<"Guess a snumber between 1~100:"<<endl;
+            cout<<"Guess a number between 1~100:"<<endl;
         }else if(selected_lang == 2){
             cout<<"1-100の間で数字を選んでね:"<<endl;
         }

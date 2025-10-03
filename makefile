@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -Wall -g
 
 Target = main
 
-SRCS = SRCS = main.cpp RockPaperScissors.cpp NumGuessing.cpp Dictionary.cpp ContinueMenu.cpp Utility.cpp
+SRCS = SRCS = main.cpp RockPaperScissors.cpp NumGuessing.cpp Dictionary.cpp Utility.cpp
 
 OBJS    = $(SRCS:.cpp=.o)
 
