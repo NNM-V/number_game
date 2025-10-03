@@ -4,6 +4,7 @@
 #include <iostream>
 #include <random>
 #include "Dictionary.h"
+#include "Utility.h"
 
 class NumGuessing{
     int lang;
@@ -21,8 +22,9 @@ class NumGuessing{
         }
         ~NumGuessing(){}
 
-        char play_NG();
+        std::string play_NG();
         int get_RandomNum();
+        void get_UserGuess(const int& rand_num);
 };
 
 #endif //_NUM_GUESSING

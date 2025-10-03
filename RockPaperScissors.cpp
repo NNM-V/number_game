@@ -1,10 +1,8 @@
 #include "RockPaperScissors.h"
-#include "ContinueMenu.h"
-
 using namespace std;
 using RPS = Rock_Paper_Scissors;
 
-char RPS::play_RPS(){
+string RPS::play_RPS(){
     while(true){
         if(selected_lang == 1){
             cout<<"Let's play rock paper scissors!"<<endl;
@@ -21,33 +19,27 @@ char RPS::play_RPS(){
         //output result
         set_Result(player_hand,pc_hand);
 
-        Continue_Menu c(selected_lang);
-        char cont = c.cont();
-        if(cont == 'm' || cont == 'n'){
-            return cont;
+        cout<<dict.get_value(REPLAY,selected_lang)<<endl;
+        Utility utility;
+        string tmp = utility.check_Vaild_String({"y","n","m"});
+        if(tmp == "m" || tmp == "n"){
+            return tmp;
         } 
     }
 }
 
 int RPS::get_PlayerHand(){
     //input hand 
-    while(true){
-        if(selected_lang == 1){
-            cout<<"Choose your hand(1:rock 2:scissors 3:paper):"<<endl;
-        }else if(selected_lang == 2){
-            cout<<"出したい手を数字で入力してね (1:ぐー 2:ちょき 3:ぱー):"<<endl;
-        }
-        
-        getline(cin,input);
-        if(input.empty()){
-            cout<<dict.get_value(EMPTY_INPUT,selected_lang)<<endl;
-        }else if(input != "1" && input != "2" && input != "3"){
-           cout<<dict.get_value(INVALID_INPUT,selected_lang)<<endl;
-        }else{
-            //convert user input string into a number
-            return stoi(input);
-        }
+    if(selected_lang == 1){
+        cout<<"Choose your hand(1:rock 2:scissors 3:paper):"<<endl;
+    }else if(selected_lang == 2){
+        cout<<"出したい手を数字で入力してね (1:ぐー 2:ちょき 3:ぱー):"<<endl;
     }
+    
+    Utility utility;
+    int hand = utility.check_Vaild_Num({"1","2","3"});
+    return hand;
+    
 }
 
 int RPS::get_RandomHand(){

@@ -5,7 +5,9 @@
 #include <array>
 #include <random>
 #include <map>
+#include "RockPaperScissors.h"
 #include "Dictionary.h"
+#include "Utility.h"
 
 class Rock_Paper_Scissors{
     int lang;
@@ -25,7 +27,7 @@ class Rock_Paper_Scissors{
         ~Rock_Paper_Scissors(){}
 
         std::map<int, std::string> get_hand_map() const;
-        char play_RPS(); 
+        std::string play_RPS(); 
         int get_PlayerHand();
         int get_RandomHand();
         void set_Hand(const int player_choice, const int cp_choice);
