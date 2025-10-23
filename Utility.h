@@ -6,7 +6,6 @@
 #include <algorithm>
 
 class Utility{
-
     public:
     Utility(){}
     ~Utility(){}

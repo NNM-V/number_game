@@ -2,28 +2,15 @@
 #define _ROCK_PAPER_SCISSORS_H
 
 #include <iostream>
-#include <array>
-#include <random>
 #include <map>
-#include "RockPaperScissors.h"
+#include "Game.h"
 #include "Dictionary.h"
 #include "Utility.h"
 
-class Rock_Paper_Scissors{
-    int lang;
-    LANGUAGE selected_lang;
-    std::string input; 
-    std::mt19937_64 engine;
-    int player_choice;
-    int pc_choice;
-
+class Rock_Paper_Scissors : public Game{
     public:
-        Rock_Paper_Scissors();
-        Rock_Paper_Scissors(int lang):lang(lang){
-            selected_lang = (LANGUAGE)lang;
-            std::random_device seed_gen;
-            engine = std::mt19937_64(seed_gen());
-        }
+        Rock_Paper_Scissors(){};
+        Rock_Paper_Scissors(int lang):Game(lang){}
         ~Rock_Paper_Scissors(){}
 
         std::map<int, std::string> get_hand_map() const;

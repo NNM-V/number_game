@@ -25,11 +25,11 @@ string NumGuessing::play_NG(){
 }
 
 int NumGuessing::get_RandomNum(){
-    uniform_int_distribution<> dis(1, 100);
-    return dis(engine);
+    return set_RandomNum(1,100);
 }
 
 void NumGuessing::get_UserGuess(const int& rand_num){
+    string input; 
     //input hand 
     while(true){
         if(selected_lang == 1){

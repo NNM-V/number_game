@@ -43,9 +43,7 @@ int RPS::get_PlayerHand(){
 }
 
 int RPS::get_RandomHand(){
-    //pick random number for cp's hand
-    uniform_int_distribution<> dis(1, 3);
-    return dis(engine);
+    return set_RandomNum(1,3);
 }
 
 map<int, string> RPS::get_hand_map() const{

@@ -8,7 +8,7 @@ char Continue_Menu::cont(){
     //continue while user input is "y"
     char cont;
     
-    
+    cout<<dict.get_value(REPLAY,selected_lang)<<endl;
 
     cin>>cont;
     //change user input to lower cases

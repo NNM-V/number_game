@@ -2,24 +2,14 @@
 #define _NUM_GUESSING_H
 
 #include <iostream>
-#include <random>
+#include "Game.h"
 #include "Dictionary.h"
 #include "Utility.h"
 
-class NumGuessing{
-    int lang;
-    LANGUAGE selected_lang;
-    std::string input;  
-    std::mt19937_64 engine;
-
+class NumGuessing : public Game{ 
     public:
         NumGuessing();
-        NumGuessing(int lang):lang(lang){
-            selected_lang = (LANGUAGE)lang;
-            //pick random number number in a range of 1-100
-            std::random_device seed_gen;
-            engine = std::mt19937_64(seed_gen());
-        }
+        NumGuessing(int lang):Game(lang){}
         ~NumGuessing(){}
 
         std::string play_NG();
