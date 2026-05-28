@@ -29,7 +29,6 @@ int NumGuessing::get_RandomNum(){
 }
 
 void NumGuessing::get_UserGuess(const int& rand_num){
-    string input; 
     //input hand 
     while(true){
         if(selected_lang == 1){
@@ -37,8 +36,10 @@ void NumGuessing::get_UserGuess(const int& rand_num){
         }else if(selected_lang == 2){
             cout<<"1-100の間で数字を選んでね:"<<endl;
         }
-        
+
+        string input; 
         getline(cin,input);
+        
         if(input.empty()){
             cout<<dict.get_value(EMPTY_INPUT,selected_lang)<<endl;
         }else{

@@ -57,14 +57,11 @@ map<int, string> RPS::get_hand_map() const{
 
 void RPS::set_Hand(const int player_hand, const int pc_hand){
     //allocate number to a string 
-    auto player_map = get_hand_map();
+    auto hand_map = get_hand_map();
     //find number that matches the user input
-    auto itr_player = player_map.find(player_hand);
-
-    //allocate number pc picked to a string
-    auto pc_map = get_hand_map();
+    auto itr_player = hand_map.find(player_hand);
     //find number that matches the pc hand
-    auto itr_pc = pc_map.find(pc_hand);
+    auto itr_pc = hand_map.find(pc_hand);
 
     if(selected_lang == 1){
         cout<<"Your hand:"<<itr_player->second<<"\n"<<"computer's hand:"<<itr_pc->second<<endl;

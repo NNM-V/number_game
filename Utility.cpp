@@ -1,9 +1,9 @@
 #include "Utility.h"
 using namespace std;
 
-string Utility::check_Valid(const vector<string>& valid_string){
-    string input;
+string Utility::check_Valid(const vector<string>& valid_string){ 
     while(true){
+        string input;
         getline(cin,input);
         auto it = std::find(valid_string.begin(), valid_string.end(), input);
         if(input.empty()){

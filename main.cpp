@@ -19,7 +19,6 @@ int main(){
         cout<<"日本語が選択されました"<<endl;
     }
 
-    string game;
     while(true){
         if(selected_lang == 1){
             cout<<"Choose game to play (1:Rock Paper Scissors 2:NumberGuessing):"<<endl;;
