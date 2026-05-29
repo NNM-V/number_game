@@ -1,7 +1,7 @@
 #include "Utility.h"
 using namespace std;
 
-string Utility::check_Valid(const vector<string>& valid_string){ 
+string Utility::check_valid(const vector<string>& valid_string){ 
     while(true){
         string input;
         getline(cin,input);
@@ -16,11 +16,11 @@ string Utility::check_Valid(const vector<string>& valid_string){
     }
 }
 
-int Utility::check_Vaild_Num(const vector<string>& valid_string){
-    string num = check_Valid(valid_string);
+int Utility::check_valid_num(const vector<string>& valid_string){
+    string num = check_valid(valid_string);
     return stoi(num);
 }
 
-string Utility::check_Vaild_String(const vector<string>& valid_string){
-    return check_Valid(valid_string);;
+string Utility::check_valid_string(const vector<string>& valid_string){
+    return check_valid(valid_string);;
 }

@@ -4,33 +4,50 @@
 #include "NumGuessing.h"
 #include "Utility.h"
 using namespace std;
-using RPS = Rock_Paper_Scissors;
+using RPS = RockPaperScissors;
 
 int main(){
-    cout<<"Choose language/言語を選択してください (1:English 2:日本語):"<<endl;
-
     Utility utility;
-    int tmp = utility.check_Vaild_Num({"1","2"});
+
+    //User language select
+    cout<<"Choose language/言語を選択してください (1:English 2:日本語):"<<endl;
+    //1:English 2:Japanese
+    //get user input and check vailidity
+    int tmp = utility.check_valid_num({"1","2"});
+    //get selected language from user input
     LANGUAGE selected_lang = static_cast<LANGUAGE>(tmp);
 
-    if(selected_lang == 1){
-        cout<<"English Selected"<<endl;
-    }else if(selected_lang == 2){
-        cout<<"日本語が選択されました"<<endl;
+    switch(selected_lang)
+    {
+        case ENGLISH:
+            cout<<"English Selected"<<endl;
+            break;
+        case JAPANESE:
+            cout<<"日本語が選択されました"<<endl;
+            break;
+        default:
+            break;
     }
 
     while(true){
-        if(selected_lang == 1){
-            cout<<"Choose game to play (1:Rock Paper Scissors 2:NumberGuessing):"<<endl;;
-        }else if(selected_lang == 2){
-            cout<<"遊びたいゲームを入力してください(1:じゃんけん 2:数当てゲーム)"<<endl;
+         switch(selected_lang)
+        {
+            case ENGLISH:
+                cout<<"Choose game to play (1:Rock Paper Scissors 2:NumberGuessing):"<<endl;;
+                break;
+            case JAPANESE:
+                cout<<"遊びたいゲームを入力してください(1:じゃんけん 2:数当てゲーム)"<<endl;
+                break;
+            default:
+                break;
         }
-
-        int selected_game = utility.check_Vaild_Num({"1","2"});
-
+       
+        //get user input and check vailidity
+        int selected_game = utility.check_valid_num({"1","2"});
+        //1:rockpaperscissors 2:numberguessing
         if(selected_game == 1){
             RPS rps(selected_lang);
-            string cont = rps.play_RPS();
+            string cont = rps.play_rps();
             if(cont == "m"){
                 continue;
             }else if(cont == "n"){
@@ -38,7 +55,7 @@ int main(){
             }
         }else if(selected_game == 2){
             NumGuessing ng(selected_lang);
-            string cont = ng.play_NG();
+            string cont = ng.play_number_game();
             if(cont == "m"){
                 continue;
             }else if(cont == "n"){

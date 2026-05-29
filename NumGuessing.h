@@ -6,15 +6,16 @@
 #include "Dictionary.h"
 #include "Utility.h"
 
-class NumGuessing : public Game{ 
+class NumGuessing : public Game{
+        Utility utility;
     public:
         NumGuessing();
-        NumGuessing(int lang):Game(lang){}
-        ~NumGuessing(){}
+        NumGuessing(int lang):Game(lang){};
+        ~NumGuessing(){};
 
-        std::string play_NG();
-        int get_RandomNum();
-        void get_UserGuess(const int& rand_num);
+        std::string play_number_game();
+        int get_random_num();
+        void get_user_guess(const int& rand_num);
 };
 
 #endif //_NUM_GUESSING

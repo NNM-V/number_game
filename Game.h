@@ -13,7 +13,7 @@ class Game{
         std::mt19937_64 engine;
     protected:
         LANGUAGE selected_lang;
-        int set_RandomNum(int min, int max){
+        int set_random_num(int min, int max){
             //pick random number for cp's hand
             std::uniform_int_distribution<> dis(min, max);
             return dis(engine);
