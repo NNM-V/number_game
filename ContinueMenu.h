@@ -5,6 +5,12 @@
 #include <limits> 
 #include "Dictionary.h"
 
+enum class Replay_Action{
+    Replay,
+    Menu,
+    Exit
+};
+
 class Continue_Menu{
     int lang;
     LANGUAGE selected_lang;
@@ -15,6 +21,8 @@ class Continue_Menu{
         }
 
     char cont();
+
+    Replay_Action get_replay_action(const std::string& input);
 };
 
 #endif //_CONT_MENU_H

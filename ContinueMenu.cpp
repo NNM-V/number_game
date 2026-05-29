@@ -29,3 +29,13 @@ char Continue_Menu::cont(){
 
     return cont;
 }
+
+Replay_Action get_replay_action(const string& input){
+    if(input == "m"){
+        return Replay_Action::Menu;
+    }
+    if(input == "n"){
+        return Replay_Action::Exit;
+    }
+    return Replay_Action::Replay;
+}

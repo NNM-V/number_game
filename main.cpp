@@ -48,6 +48,7 @@ int main(){
         if(selected_game == 1){
             RPS rps(selected_lang);
             string cont = rps.play_rps();
+            //ask user for replay
             if(cont == "m"){
                 continue;
             }else if(cont == "n"){
