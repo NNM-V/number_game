@@ -11,6 +11,7 @@ class Game{
         int lang;
         std::random_device seed_gen;
         std::mt19937_64 engine;
+
     protected:
         LANGUAGE selected_lang;
         int set_random_num(int min, int max){
@@ -22,8 +23,9 @@ class Game{
         Game(){};
         Game(int lang)
             :lang(lang),
-            selected_lang(static_cast<LANGUAGE>(lang)),
-            engine(seed_gen()){}
+            seed_gen(),
+            engine(seed_gen()),
+            selected_lang(static_cast<LANGUAGE>(lang)){}
         virtual ~Game(){}
 };
 
