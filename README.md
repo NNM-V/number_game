@@ -6,7 +6,7 @@
 </p>
 
 # Terminal game Application
-  Game application that moves on terminal using C++.
+  Game application that runs in a terminal using C++.
     
 ## Table of Contents
 - About the Project
@@ -20,7 +20,7 @@ Players can choose between two games:
 - Rock Paper Scissors
 - Number Guessing Game
 
-The application supports English or Japanese.
+The application supports English and Japanese.
 
 ## Environment
 - c++17
