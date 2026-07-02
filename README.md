@@ -6,7 +6,7 @@
 </p>
 
 # Terminal game Application
-  Game application that runs in a terminal using C++.
+Game application that runs in a terminal using C++.
     
 ## Table of Contents
 - About the Project
